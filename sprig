@@ -69,7 +69,7 @@ setLegend(
 
 setSolids([])
 
-interval = 1000
+intervalTime = 500;
 
 let level = 0
 const levels = [
@@ -91,15 +91,43 @@ w.w`
 
 setMap(levels[level]);
 
-onInput("s", () => {
-  getFirst(net).y -= 1; // positive y is downwards
-  moveFish()
+onInput("a", () => {
+  let numMoves = getRandomInt(1, 5);
+  let directionMoves = getRandomSign();
+  moveFish(numMoves, directionMoves)
 });
 
-function moveFish() {
-  getFirst(fish).y += 1;
+onInput("w", () => {
+  getFirst(net).y -= 1; // positive y is downwards
+});
 
-  setTimeout(moveFish, interval)
+onInput("s", () => {
+  getFirst(net).y += 1; // positive y is downwards
+});
+
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
+function getRandomSign() {
+    return Math.random() < 0.5 ? -1 : +1;
+}
+
+function moveFish(numMoves, directionMoves) {
+
+  moveCount = 0;
+
+  const moveInterval = setInterval(() => {
+    getFirst(fish).y += 1 * directionMoves; // move the fish
+    moveCount++; // increment number of times the fish has moved
+
+    if (moveCount >= numMoves) {
+      clearInterval(moveInterval);
+    }
+  }, intervalTime);
 }
 
 
