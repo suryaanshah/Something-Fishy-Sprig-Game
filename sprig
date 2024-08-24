@@ -69,7 +69,10 @@ setLegend(
 
 setSolids([])
 
-intervalTime = 500;
+
+// The fish should move faster than the net, so gravity Interval should be bigger.
+intervalTime = 300;
+gravityIntervalTime = 500;
 
 let level = 0
 const levels = [
@@ -91,18 +94,20 @@ w.w`
 
 setMap(levels[level]);
 
-onInput("a", () => {
+function gameLoop() {
   let numMoves = getRandomInt(1, 5);
   let directionMoves = getRandomSign();
-  moveFish(numMoves, directionMoves)
+  moveFish(numMoves, directionMoves);
+  setTimeout(gravityNet, 500);
+}
+
+onInput("s", () => {
+  gameLoop()
 });
 
 onInput("w", () => {
-  getFirst(net).y -= 1; // positive y is downwards
-});
-
-onInput("s", () => {
-  getFirst(net).y += 1; // positive y is downwards
+  getFirst(net).y -= 1; 
+  gameLoop()
 });
 
 
@@ -117,9 +122,7 @@ function getRandomSign() {
 }
 
 function moveFish(numMoves, directionMoves) {
-
-  moveCount = 0;
-
+    moveCount = 0;
   const moveInterval = setInterval(() => {
     getFirst(fish).y += 1 * directionMoves; // move the fish
     moveCount++; // increment number of times the fish has moved
@@ -128,6 +131,10 @@ function moveFish(numMoves, directionMoves) {
       clearInterval(moveInterval);
     }
   }, intervalTime);
+}
+
+function gravityNet() {
+  getFirst(net).y += 1; // positive y is downwards
 }
 
 
