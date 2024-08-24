@@ -69,10 +69,11 @@ setLegend(
 
 setSolids([])
 
+speed = 100
+
 let level = 0
 const levels = [
   map`
-w.w
 w.w
 w.w
 wfw
@@ -85,7 +86,6 @@ w.w
 w.w
 w.w
 w.w
-w.w
 w.w`
 ]
 
@@ -93,18 +93,14 @@ setMap(levels[level]);
 
 onInput("s", () => {
   getFirst(net).y += 1; // positive y is downwards
+  moveFish()
 });
 
 function moveFish() {
   getFirst(fish).y += 1;
+
+  setTimeout(moveFish, speed)
 }
-
-
-
-
-
-
-/////////
 
 
 
