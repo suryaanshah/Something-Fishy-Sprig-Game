@@ -11,7 +11,7 @@ https://sprig.hackclub.com/gallery/getting_started
 const net = "n";
 const wall = "w";
 const fish = "f";
-const fish2 = "f2";
+const fish2 = "2";
 
 
 setLegend(
@@ -90,7 +90,7 @@ setSolids([])
 
 // The fish should move faster than the net, so gravity Interval should be bigger.
 intervalTime = 300;
-gravityIntervalTime = 500;
+gravityIntervalTime = 700;
 
 let level = 0
 const levels = [
@@ -116,16 +116,16 @@ function gameLoop() {
   let numMoves = getRandomInt(1, 5);
   let directionMoves = getRandomSign();
   moveFish(numMoves, directionMoves);
-  setTimeout(gravityNet, 500);
+  gravityNet();
+  
 }
 
 onInput("s", () => {
-  gameLoop()
+  gameLoop();
 });
 
 onInput("w", () => {
   getFirst(net).y -= 1; 
-  gameLoop()
 });
 
 
@@ -153,6 +153,7 @@ function moveFish(numMoves, directionMoves) {
 
 function gravityNet() {
   getFirst(net).y += 1; // positive y is downwards
+    setTimeout(gravityNet, gravityIntervalTime);
 }
 
 
