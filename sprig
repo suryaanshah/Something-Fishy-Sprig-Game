@@ -145,7 +145,7 @@ function moveFish() {
 
     if (moveCount >= numMoves) {
       clearInterval(moveInterval);
-      // setTimeout(moveFish, fishDelayTime);
+      setTimeout(moveFish, fishDelayTime);
     }
   }, fishIntervalTime);
 }
