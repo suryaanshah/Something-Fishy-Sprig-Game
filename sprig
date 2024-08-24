@@ -7,7 +7,7 @@ https://sprig.hackclub.com/gallery/getting_started
 @tags: []
 @addedOn: 2024-00-00
 */
-swswswswswswswswswswswsswwsswwswsswwssw
+
 const net = "n";
 const wall = "w";
 const fish = "f";
@@ -89,16 +89,23 @@ w.w
 w.w`
 ]
 
-setMap(levels[level])
-
-setPushables({
-  [ player ]: []
-})
+setMap(levels[level]);
 
 onInput("s", () => {
-  getFirst(player).y += 1
-})
+  getFirst(net).y += 1; // positive y is downwards
+});
 
-afterInput(() => {
-  
-})
+function moveFish() {
+  getFirst(fish).y += 1;
+}
+
+
+
+
+
+
+/////////
+
+
+
+
