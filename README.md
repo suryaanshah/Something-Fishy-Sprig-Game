@@ -1,2 +1,2 @@
 # Something-Fishy-Sprig-Game
-A game for Sprig by HackClub
+A game to be played with Sprig from HackClub
