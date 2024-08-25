@@ -156,6 +156,9 @@ onInput("s", () => {
 
 // w for moving up
 onInput("w", () => {
+  if (!ongoingGame) {
+    return;
+  }
   getFirst(net).y -= 1; 
   resetSpeed = true;
 });
