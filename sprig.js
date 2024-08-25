@@ -118,7 +118,8 @@ gravityIntervalTime = 700;
 let moveInterval = undefined;
 let gameOngoing = false;
 let resetSpeed = false;
-const netAcceleration = 0.5;
+const netAcceleration = 0.3;
+const netTerminalSpeed = 2.0;
 
 let level = 0
 const levels = [
@@ -226,6 +227,8 @@ function gravityNet(currentSpeed = 0, accumulatedY = 0) {
   else {
     currentSpeed += netAcceleration;
   }
+
+  currentSpeed = Math.min(currentSpeed, netTerminalSpeed); // Speed cannot exceed terminal speed. 
   accumulatedY += currentSpeed;
 
   const intYMovement = Math.floor(accumulatedY);
