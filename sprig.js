@@ -283,7 +283,9 @@ onInput("w", () => {
 onInput("j", () => {
   gameOngoing = false;
   setMap(levels[level]);
+  setBackground(water);
   score = 0;
+  clearText();
 });
 
 function win() {
@@ -298,6 +300,9 @@ function win() {
 }
 
 function computeScore() {
+  if (!gameOngoing) {
+    return;
+  }
   if (getFirst(net).y == getFirst(fish).y) {
     score += 10;
     console.log(score);
