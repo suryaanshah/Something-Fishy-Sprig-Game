@@ -258,7 +258,6 @@ setBackground(water);
 function gameLoop() {
   moveFish();
   gravityNet();
-  computeScore();
 }
 
 // s for start
@@ -277,6 +276,7 @@ onInput("w", () => {
   }
   getFirst(net).y -= 1; 
   resetSpeed = true;
+  computeScore();
 });
 
 // j for reset
