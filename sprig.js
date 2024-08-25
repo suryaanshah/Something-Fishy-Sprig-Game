@@ -200,7 +200,7 @@ function moveFish() {
   }, fishIntervalTime);
 }
 
-function gravityNet(currentSpeed = 0, acceleration = 1, accumulatedY = 0) {
+function gravityNet(currentSpeed = 0, acceleration = 0.1, accumulatedY = 0) {
   if (!gameOngoing) {
     return;
   }
@@ -214,7 +214,7 @@ function gravityNet(currentSpeed = 0, acceleration = 1, accumulatedY = 0) {
   accumulatedY -= intYMovement; // To be used for future movement
 
   if (intYMovement > 0) {
-    getFirst(net).y += 1; // positive y is downwards
+    getFirst(net).y += intYMovement; // positive y is downwards
   }
   
   setTimeout(() => 
