@@ -254,11 +254,47 @@ const winMap =  map`
 
 setMap(levels[level]);
 setBackground(water);
-addText("Press s to start!", {
-  x: 2,
-  y: 14,
+
+
+function startText() {
+  addText("Press s to start!", {
+    x: 2,
+    y: 14,
+    color: color`2`
+  })
+}
+
+function scoreText(score = 0) {
+  addText("Score:", {
+  x: 13,
+  y: 1,
   color: color`2`
-})
+  });
+
+  addText(score.toString().padStart(2, '0'), {
+    x: 15,
+    y: 3,
+    color: color`2`
+  });
+}
+
+function winnerText() {
+  addText("Winner!!!", {
+    x: 6,
+    y: 7,
+    color: color`3`
+  });
+}
+
+function resetText() {
+  addText("Press j to reset", {
+    x: 2,
+    y: 14,
+    color: color`5`
+  });
+}
+
+startText();
 
 function gameLoop() {
   moveFish();
@@ -271,14 +307,9 @@ onInput("s", () => {
   if (!gameOngoing) {
     gameOngoing = true;
     gameLoop();
+    clearText();
+    scoreText();
   }
-  clearText();
-
-  addText("Score:", {
-  x: 13,
-  y: 1,
-  color: color`2`
-  })
   
 });
 
@@ -299,12 +330,7 @@ onInput("j", () => {
   setBackground(water);
   score = 0;
   clearText();
-
-  addText("Press s to start!", {
-  x: 2,
-  y: 14,
-  color: color`2`
-})
+  startText();
 });
 
 function win() {
@@ -312,17 +338,9 @@ function win() {
   gameOngoing = false;
   setMap(winMap);
   setBackground(winner_bg);
-  addText("Winner!!!", {
-    x: 6,
-    y: 7,
-    color: color`3`
-  });
-
-  addText("Press j to reset", {
-    x: 2,
-    y: 14,
-    color: color`5`
-  });
+  
+  winnerText();
+  resetText();
 }
 
 function computeScore() {
@@ -336,12 +354,7 @@ function computeScore() {
     score -= 1;
   }
   score = Math.max(score, 0);
-
-  addText(score.toString().padStart(2, '0'), {
-    x: 15,
-    y: 3,
-    color: color`2`
-  })
+  scoreText(score);
 
   if (score >= 100) {
     win();
