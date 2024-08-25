@@ -184,13 +184,13 @@ function moveFish() {
   let directionMoves = getRandomSign();
   if (startY == 0) {
     directionMoves = 1; }
-  else if (startY == height()) {
+  else if (startY == height()) {J
     directionMoves = -1; }
   
   moveCount = 0;
   moveInterval = setInterval(() => {
     if (gameOngoing) {
-      getFirst(fish).y += 1 * directionMoves; // move the fish
+      getFirst(fish).y += directionMoves; // move the fish
       moveCount++; // increment number of times the fish has moved
     } else {
       clearInterval(moveInterval);
@@ -208,8 +208,11 @@ function gravityNet(currentSpeed = 0, accumulatedY = 0) {
     return;
   }
 
-  if (getFirst(fish).y == height()) {
-    currentSpeed = 0;
+  console.log("current y:", getFirst(net).y, " height:", height());
+  console.log("current Speed:", currentSpeed);
+
+  if (getFirst(net).y == (height() - 1)) {
+    resetSpeed = true;
   }
 
   // Assume a = 1 // gravitational acceleration
@@ -220,7 +223,6 @@ function gravityNet(currentSpeed = 0, accumulatedY = 0) {
   else {
     currentSpeed += netAcceleration;
   }
-  console.log(currentSpeed);
   accumulatedY += currentSpeed;
 
   const intYMovement = Math.floor(accumulatedY);
