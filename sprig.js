@@ -11,8 +11,8 @@ https://sprig.hackclub.com/gallery/getting_started
 const net = "n";
 const wall = "w";
 const fish = "r";
-const fish2 = "b";
 const water = "w";
+const seabed = "b";
 
 // Winner
 const sparkle_tl= "s";
@@ -63,23 +63,6 @@ setLegend(
 0000000000000000
 0000000000000000
 0000000000000000`],
-  [ fish2, bitmap`
-................
-................
-........77......
-..7...77..7.....
-.5.7.7.....57...
-..5.5..H...5.7..
-...5...H...5.07.
-...5...H...5..7.
-..5.5..H...5.7..
-.5.7.7.....57...
-..7...77..7.....
-........77......
-................
-................
-................
-................`],
   [ fish, bitmap`
 ................
 ................
@@ -114,6 +97,23 @@ setLegend(
 7777775757777777
 7777757575777777
 7777777777777777`],  
+  [ seabed, bitmap`
+D...............
+DD..............
+DD..............
+DD..............
+DDD............D
+DDDD...........D
+DDDDD.........DD
+DDDDD........DDD
+DDDDDD......DDDD
+DDDDDDD....DDDDD
+DDDDDDD....DDDDD
+DDDDDDDD...DDDDD
+DDDDDDDDD..DDDDD
+DDDDDDDDDDDDDDDD
+DDDDDDDDDDDDDDDD
+DDDDDDDDDDDDDDDD`],
 
   [ winner_bg, bitmap`
 DDDDDDDDDDDDDDDD
@@ -232,7 +232,7 @@ const levels = [
 ...................
 ...................
 ...................
-...................`,
+bb.bbbb.b.bb.bbb.b.`,
 ]
 
 const winMap =  map`
