@@ -113,6 +113,8 @@ fishIntervalTime = 300;
 fishDelayTime = 1000;
 gravityIntervalTime = 700;
 
+let score = 0;
+
 let moveInterval = undefined;
 let gameOngoing = false;
 let resetSpeed = false;
@@ -170,14 +172,14 @@ onInput("w", () => {
 onInput("j", () => {
   gameOngoing = false;
   setMap(levels[level]);
+  score = 0;
 });
 
 function computeScore() {
-  // get sprites at net position
-  let netSprite = getFirst(net);
-  let netX = netSprite.x;
-  let netY = netSprite.y;
-  console.log(getTile(netX, netY));
+  if (getFirst(net).y == getFirst(fish).y) {
+    score += 5;
+    console.log(score);
+  }
 }
 
 function getRandomInt(min, max) {
@@ -217,6 +219,7 @@ function moveFish() {
 }
 
 function gravityNet(currentSpeed = 0, accumulatedY = 0) {
+  computeScore();
   const maxY = height() - 1;
   
   if (!gameOngoing) {
