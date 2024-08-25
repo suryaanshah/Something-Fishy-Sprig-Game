@@ -334,6 +334,13 @@ function computeScore() {
   else {
     score -= 1;
   }
+  score = Math.max(score, 0);
+
+  addText(score.toString().padStart(2, '0'), {
+    x: 15,
+    y: 3,
+    color: color`2`
+  })
 
   if (score >= 100) {
     win();
