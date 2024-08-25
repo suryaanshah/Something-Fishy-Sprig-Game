@@ -221,6 +221,9 @@ fishIntervalTime = 300;
 fishDelayTime = 1000;
 gravityIntervalTime = 700;
 
+let moveInterval;
+let gameOngoing = false;
+
 let level = 0
 const levels = [
   map`
@@ -243,12 +246,16 @@ setMap(levels[level]);
 setBackground(water);
 
 function gameLoop() {
+  if (!gameOngoing) {
+    return;
+  };
   moveFish();
   gravityNet();
 }
 
 // s for start
 onInput("s", () => {
+  gameOngoing = true;
   gameLoop();
 });
 
@@ -258,6 +265,10 @@ onInput("w", () => {
 });
 
 // j for reset
+onInput("j", () => {
+  gameOngoing = false;
+  setMap(levels[level]);
+});
 
 
 function getRandomInt(min, max) {
@@ -281,7 +292,7 @@ function moveFish() {
     directionMoves = -1; }
   
   moveCount = 0;
-  const moveInterval = setInterval(() => {
+  moveInterval = setInterval(() => {
     getFirst(fish).y += 1 * directionMoves; // move the fish
     moveCount++; // increment number of times the fish has moved
 
