@@ -184,7 +184,7 @@ function moveFish() {
   let directionMoves = getRandomSign();
   if (startY == 0) {
     directionMoves = 1; }
-  else if (startY == height()) {J
+  else if (startY == (height()-1)) {
     directionMoves = -1; }
   
   moveCount = 0;
@@ -211,7 +211,7 @@ function gravityNet(currentSpeed = 0, accumulatedY = 0) {
   console.log("current y:", getFirst(net).y, " height:", height());
   console.log("current Speed:", currentSpeed);
 
-  if (getFirst(net).y == (height() - 1)) {
+  if (getFirst(net).y >= (height() - 1)) {
     resetSpeed = true;
   }
 
