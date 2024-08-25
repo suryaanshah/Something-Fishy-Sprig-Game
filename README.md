@@ -17,7 +17,7 @@ The fish is caught when the score reaches 100!
 ## How to play
 The game can be played by installing on Sprig. 
 
-Alternatively, go to Sprig website's, [Getting Started](https://sprig.hackclub.com/gallery/getting_started) and replace the code from  `sprig.js` into that code editor. Then press, `sShift + Enter`, and press `s` to start. 
+Alternatively, play the game [here](https://sprig.hackclub.com/share/tzt4M1tjT0kMtsc39kjZ) at Sprig's website. Press, `sShift + Enter`, and press `s` to start. 
 
 Go `w` for the win!
 
