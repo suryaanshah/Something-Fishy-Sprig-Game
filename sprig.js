@@ -254,6 +254,11 @@ const winMap =  map`
 
 setMap(levels[level]);
 setBackground(water);
+addText("Press s to start!", {
+  x: 2,
+  y: 14,
+  color: color`2`
+})
 
 function gameLoop() {
   moveFish();
@@ -267,6 +272,14 @@ onInput("s", () => {
     gameOngoing = true;
     gameLoop();
   }
+  clearText();
+
+  addText("Score:", {
+  x: 13,
+  y: 1,
+  color: color`2`
+  })
+  
 });
 
 // w for moving up
@@ -286,9 +299,15 @@ onInput("j", () => {
   setBackground(water);
   score = 0;
   clearText();
+  addText("Press s to start!", {
+  x: 2,
+  y: 14,
+  color: color`2`
+})
 });
 
 function win() {
+  clearText();
   gameOngoing = false;
   setMap(winMap);
   setBackground(winner_bg);
@@ -296,6 +315,12 @@ function win() {
     x: 6,
     y: 7,
     color: color`3`
+  });
+
+  addText("Press j to reset", {
+    x: 2,
+    y: 14,
+    color: color`5`
   });
 }
 
@@ -305,7 +330,6 @@ function computeScore() {
   }
   if (getFirst(net).y == getFirst(fish).y) {
     score += 10;
-    console.log(score);
   }
   else {
     score -= 1;
