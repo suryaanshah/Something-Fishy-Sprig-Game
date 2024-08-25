@@ -259,7 +259,7 @@ setBackground(water);
 function startText() {
   addText("Press s to start!", {
     x: 2,
-    y: 14,
+    y: 12,
     color: color`2`
   })
 }
