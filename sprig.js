@@ -2,10 +2,10 @@
 First time? Check out the tutorial game:
 https://sprig.hackclub.com/gallery/getting_started
 
-@title: 
-@author: 
-@tags: []
-@addedOn: 2024-00-00
+@title: Something Fishy
+@author: Suryaansh Chawla
+@tags: [fishing, fish]
+@addedOn: 2024-08-25
 */
 
 const net = "n";
@@ -299,6 +299,7 @@ onInput("j", () => {
   setBackground(water);
   score = 0;
   clearText();
+
   addText("Press s to start!", {
   x: 2,
   y: 14,
