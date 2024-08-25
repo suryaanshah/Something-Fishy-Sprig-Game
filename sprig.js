@@ -246,9 +246,6 @@ setMap(levels[level]);
 setBackground(water);
 
 function gameLoop() {
-  if (!gameOngoing) {
-    return;
-  };
   moveFish();
   gravityNet();
 }
@@ -293,8 +290,12 @@ function moveFish() {
   
   moveCount = 0;
   moveInterval = setInterval(() => {
-    getFirst(fish).y += 1 * directionMoves; // move the fish
-    moveCount++; // increment number of times the fish has moved
+    if (gameOngoing) {
+      getFirst(fish).y += 1 * directionMoves; // move the fish
+      moveCount++; // increment number of times the fish has moved
+    } else {
+      clearInterval(moveInterval);
+    }
 
     if (moveCount >= numMoves) {
       clearInterval(moveInterval);
@@ -304,6 +305,9 @@ function moveFish() {
 }
 
 function gravityNet() {
+  if (!gameOngoing) {
+    return;
+  }
   getFirst(net).y += 1; // positive y is downwards
     setTimeout(gravityNet, gravityIntervalTime);
 }
