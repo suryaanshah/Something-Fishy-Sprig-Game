@@ -208,6 +208,8 @@ function moveFish() {
 }
 
 function gravityNet(currentSpeed = 0, accumulatedY = 0) {
+  const maxY = height() - 1;
+  
   if (!gameOngoing) {
     return;
   }
@@ -215,7 +217,7 @@ function gravityNet(currentSpeed = 0, accumulatedY = 0) {
   console.log("current y:", getFirst(net).y, " height:", height());
   console.log("current Speed:", currentSpeed);
 
-  if (getFirst(net).y >= (height() - 1)) {
+  if (getFirst(net).y >= maxY) {
     resetSpeed = true;
   }
 
@@ -231,11 +233,19 @@ function gravityNet(currentSpeed = 0, accumulatedY = 0) {
   currentSpeed = Math.min(currentSpeed, netTerminalSpeed); // Speed cannot exceed terminal speed. 
   accumulatedY += currentSpeed;
 
+  // remaning distance to bottom
+  let remainingDistanceToBottom = maxY - getFirst(net).y;
+
   const intYMovement = Math.floor(accumulatedY);
   accumulatedY -= intYMovement; // To be used for future movement
 
   if (intYMovement > 0) {
-    getFirst(net).y += intYMovement; // positive y is downwards
+    if (intYMovement > remainingDistanceToBottom) {
+      getFirst(net).y += remainingDistanceToBottom;
+    }
+    else {
+      getFirst(net).y += intYMovement; // positive y is downwards
+    }
   }
   
   setTimeout(() => 
