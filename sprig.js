@@ -272,7 +272,13 @@ function getRandomSign() {
 
 function moveFish() {
   let numMoves = getRandomInt(1, 5);
+  
+  startY = getFirst(fish).y;
   let directionMoves = getRandomSign();
+  if (startY == 0) {
+    directionMoves = 1; }
+  else if (startY == height()) {
+    directionMoves = -1; }
   
   moveCount = 0;
   const moveInterval = setInterval(() => {
