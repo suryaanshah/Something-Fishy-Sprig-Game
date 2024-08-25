@@ -118,7 +118,7 @@ gravityIntervalTime = 700;
 let moveInterval = undefined;
 let gameOngoing = false;
 let resetSpeed = false;
-const netAcceleration = 0.3;
+const netAcceleration = 0.4;
 const netTerminalSpeed = 2.0;
 
 let level = 0
