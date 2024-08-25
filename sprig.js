@@ -344,8 +344,13 @@ function moveFish() {
   
   moveCount = 0;
   moveInterval = setInterval(() => {
-    getFirst(fish).y += directionMoves; // move the fish
-    moveCount++; // increment number of times the fish has moved
+    if (gameOngoing) {
+      getFirst(fish).y += directionMoves; // move the fish
+      moveCount++; // increment number of times the fish has moved
+    }
+    else {
+      clearInterval(moveInterval);
+    }
 
     if (moveCount >= numMoves) {
       clearInterval(moveInterval);
