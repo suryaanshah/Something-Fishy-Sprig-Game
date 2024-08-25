@@ -304,7 +304,7 @@ function gameLoop() {
 // s for start
 onInput("s", () => {
   // This check is necessary to prevent fish erratic behavior.
-  if (!gameOngoing) {
+  if ((!gameOngoing) & (score == 0)) {
     gameOngoing = true;
     gameLoop();
     clearText();
