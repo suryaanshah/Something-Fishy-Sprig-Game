@@ -20,8 +20,6 @@ const fishTopRight = "r";
 const fishBottomLeft = "u";
 const fishBottomRight = "d";
 
-
-
 setLegend(
   [ net, bitmap`
 0.0.0.0.0.0.0.0.
@@ -147,6 +145,7 @@ setBackground(water);
 function gameLoop() {
   moveFish();
   gravityNet();
+  computeScore();
 }
 
 // s for start
@@ -170,6 +169,13 @@ onInput("j", () => {
   setMap(levels[level]);
 });
 
+function computeScore() {
+  // get sprites at net position
+  let netSprite = getFirst(net);
+  let netX = netSprite.x;
+  let netY = netSprite.y;
+  console.log(getTile(netX, netY));
+}
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);
