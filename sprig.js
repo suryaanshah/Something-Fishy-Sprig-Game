@@ -117,6 +117,8 @@ gravityIntervalTime = 700;
 
 let moveInterval;
 let gameOngoing = false;
+let resetSpeed = false;
+const netAcceleration = 0.5;
 
 let level = 0
 const levels = [
@@ -155,6 +157,7 @@ onInput("s", () => {
 // w for moving up
 onInput("w", () => {
   getFirst(net).y -= 1; 
+  resetSpeed = true;
 });
 
 // j for reset
@@ -200,13 +203,19 @@ function moveFish() {
   }, fishIntervalTime);
 }
 
-function gravityNet(currentSpeed = 0, acceleration = 0.1, accumulatedY = 0) {
+function gravityNet(currentSpeed = 0, accumulatedY = 0) {
   if (!gameOngoing) {
     return;
   }
 
   // Assume a = 1 // gravitational acceleration
-  currentSpeed += acceleration;
+  if (resetSpeed) {
+    currentSpeed = 0;
+    resetSpeed = false;
+  } 
+  else {
+    currentSpeed += netAcceleration;
+  }
   console.log(currentSpeed);
   accumulatedY += currentSpeed;
 
@@ -218,7 +227,7 @@ function gravityNet(currentSpeed = 0, acceleration = 0.1, accumulatedY = 0) {
   }
   
   setTimeout(() => 
-    gravityNet(currentSpeed, acceleration, accumulatedY), gravityIntervalTime);
+    gravityNet(currentSpeed, accumulatedY), gravityIntervalTime);
 }
 
 
