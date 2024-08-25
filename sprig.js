@@ -208,6 +208,10 @@ function gravityNet(currentSpeed = 0, accumulatedY = 0) {
     return;
   }
 
+  if (getFirst(fish).y == height()) {
+    currentSpeed = 0;
+  }
+
   // Assume a = 1 // gravitational acceleration
   if (resetSpeed) {
     currentSpeed = 0;
