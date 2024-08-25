@@ -214,9 +214,6 @@ function gravityNet(currentSpeed = 0, accumulatedY = 0) {
     return;
   }
 
-  console.log("current y:", getFirst(net).y, " height:", height());
-  console.log("current Speed:", currentSpeed);
-
   if (getFirst(net).y >= maxY) {
     resetSpeed = true;
   }
