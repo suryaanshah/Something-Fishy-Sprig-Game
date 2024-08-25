@@ -115,7 +115,7 @@ fishIntervalTime = 300;
 fishDelayTime = 1000;
 gravityIntervalTime = 700;
 
-let moveInterval;
+let moveInterval = undefined;
 let gameOngoing = false;
 let resetSpeed = false;
 const netAcceleration = 0.5;
