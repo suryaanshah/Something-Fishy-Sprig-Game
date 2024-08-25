@@ -150,8 +150,11 @@ function gameLoop() {
 
 // s for start
 onInput("s", () => {
-  gameOngoing = true;
-  gameLoop();
+  // This check is necessary to prevent fish erratic behavior.
+  if (!gameOngoing) {
+    gameOngoing = true;
+    gameLoop();
+  }
 });
 
 // w for moving up
