@@ -323,6 +323,11 @@ function getRandomSign() {
 }
 
 function moveFish() {
+  if (!gameOngoing) {
+    clearInterval(moveInterval);
+    return;
+  }
+    
   let numMoves = getRandomInt(1, 5);
   
   startY = getFirst(fish).y;
@@ -334,12 +339,8 @@ function moveFish() {
   
   moveCount = 0;
   moveInterval = setInterval(() => {
-    if (gameOngoing) {
-      getFirst(fish).y += directionMoves; // move the fish
-      moveCount++; // increment number of times the fish has moved
-    } else {
-      clearInterval(moveInterval);
-    }
+    getFirst(fish).y += directionMoves; // move the fish
+    moveCount++; // increment number of times the fish has moved
 
     if (moveCount >= numMoves) {
       clearInterval(moveInterval);
