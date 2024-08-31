@@ -14,8 +14,11 @@ const selector = "a";
 const net = "n";
 const wall = "w";
 const fish1 = "r";
+const fish1_flip = "4";
 const fish2 = "y";
+const fish2_flip = "5";
 const fish3 = "h";
+const fish3_flip = "6";
 const water = "w";
 const fish_background = "f";
 const seabed = "b";
@@ -239,6 +242,58 @@ L00L11CCCCCCFF..
 00..0066666000..
 ......00000.....`],
 
+  [fish1_flip, bitmap`
+................
+................
+................
+....33333...338.
+..33333333.58388
+..3223333338838.
+.3302333383333..
+333333883338838.
+DDD3888833.58388
+...333333...338.
+................
+................
+................
+................
+................
+................`], 
+  [fish2_flip, bitmap`
+..5...5.........
+.5.5.5.5........
+5...5...5.......
+....500.........
+..000LL00.......
+.00LLLLL0...0.0.
+.0L22LLL0..01010
+00L02LLL0..01110
+0LLLLLLLL0..010.
+0LLLLLLLL00.010.
+022222LLLLL0108.
+.0222LL0222L08..
+.8000000.0008...
+...880..0888....
+................
+................`],
+  [fish3_flip, bitmap`
+................
+................
+................
+.........0000...
+....0000088800..
+...070666000....
+..0777066880....
+.070770666680..0
+.070770666666009
+.077706666666090
+0000066666666609
+0CCCC06666666609
+.0000C0608806090
+.0CCC06660800.09
+..0006666600..00
+.....00000......`],
+
   [fish_background, bitmap`
 ................
 ................
@@ -369,6 +424,8 @@ const xSpeed1 = getFirst(selector).x;
 
 let score = 0;
 
+let horizontal_play = false;
+
 let moveInterval = undefined;
 let gameOngoing = false;
 let resetSpeed = false;
@@ -496,6 +553,14 @@ function gameLoop() {
   gravityNet();
 }
 
+// l for horizontal play
+onInput("l", () => {
+  if (gameOngoing) {
+    return;
+  }
+  horizontal_play = true;
+});
+
 
 // a for levels
 onInput("a", () => {
@@ -571,7 +636,7 @@ function computeScore() {
   if (!gameOngoing) {
     return;
   }
-  if (getFirst(net).y == getFirst(fish).y) {
+  if ((getFirst(net).y == getFirst(fish).y) && (getFirst(net).x == getFirst(fish).x)) {
     score += 10;
   }
   else {
@@ -602,20 +667,32 @@ function moveFish() {
     return;
   }
     
+  let moveHorizonally = Math.random() < 0.5;
+  let horizontalDirection = getRandomSign();
+  
   let numMoves = getRandomInt(1, 5);
   
-  startY = getFirst(fish).y;
+  let startY = getFirst(fish).y;
+  let startX = getFirst(fish).x;
   let directionMoves = getRandomSign();
   if (startY == 0) {
     directionMoves = 1; }
   else if (startY == (height()-1)) {
     directionMoves = -1; }
+  if (startX == 0) {
+    horizontalDirection = 1; } 
+  else if (startX === (width() - 1)) {
+    horizontalDirection = -1; }
   
   moveCount = 0;
   moveInterval = setInterval(() => {
     if (gameOngoing) {
       getFirst(fish).y += directionMoves; // move the fish
       moveCount++; // increment number of times the fish has moved
+
+      if (moveHorizonally && moveCount == 1) {
+          getFirst(fish).x += horizontalDirection; // Move the fish horizontally once
+      }
     }
     else {
       clearInterval(moveInterval);
