@@ -421,12 +421,7 @@ function computeSpeed(xSpeed1, xSelectedSpeed) {
 }
 
 function showSpeed(speed) {
-  addText("Level: ", {
-    x: 1,
-    y: 1,
-    color: color`2`
-  })
-  addSprite(5,0,speed_sprites[speed]);
+  addSprite(0,0,speed_sprites[speed]);
 }
 
 
@@ -514,10 +509,10 @@ onInput("s", () => {
     setBackground(water);
     fish = fish_types[speed];
     addSprite(9,3,fish);
+    showSpeed(speed);
     gameOngoing = true;
     gameLoop();
     clearText();
-    showSpeed(speed);
     scoreText();
   }
   
