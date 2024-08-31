@@ -661,14 +661,20 @@ function getRandomSign() {
     return Math.random() < 0.5 ? -1 : +1;
 }
 
+function getRandomBoolean() {
+  return Math.random() < 0.5;
+}
+
 function moveFish() {
   if (!gameOngoing) {
     clearInterval(moveInterval);
     return;
   }
-    
-  let moveHorizonally = Math.random() < 0.5;
-  let horizontalDirection = getRandomSign();
+
+  if (horizontal_play) {
+    moveHorizontally = getRandomBoolean();
+    horizontalDirection = getRandomSign();
+  }
   
   let numMoves = getRandomInt(1, 5);
   
@@ -679,10 +685,13 @@ function moveFish() {
     directionMoves = 1; }
   else if (startY == (height()-1)) {
     directionMoves = -1; }
-  if (startX == 0) {
-    horizontalDirection = 1; } 
-  else if (startX === (width() - 1)) {
-    horizontalDirection = -1; }
+
+  if (horizontal_play) {
+    if (startX == 0) {
+      horizontalDirection = 1; } 
+    else if (startX === (width() - 1)) {
+      horizontalDirection = -1; }
+  }
   
   moveCount = 0;
   moveInterval = setInterval(() => {
@@ -690,8 +699,10 @@ function moveFish() {
       getFirst(fish).y += directionMoves; // move the fish
       moveCount++; // increment number of times the fish has moved
 
-      if (moveHorizonally && moveCount == 1) {
+      if (horizontal_play) { 
+        if (moveHorizontally && moveCount === 1) {
           getFirst(fish).x += horizontalDirection; // Move the fish horizontally once
+        }
       }
     }
     else {
