@@ -400,7 +400,7 @@ DDDDDDDDDDDDDDDD`],
 )
 
 // Setup
-setSolids([rock, seabed ]);
+setSolids([fish, rock, seabed ]);
 
 const setup_map = map`
 ...................
