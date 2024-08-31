@@ -6,7 +6,8 @@ Play this game to practice your fishing skills! :laughing:
 # Description
 ** Something Fishy ** is a fishing game. The objective is to catch the fish in the net. 
 
-![image](https://github.com/user-attachments/assets/083fccbe-17f8-4fed-865c-71f6433c06a0)
+![image](https://github.com/user-attachments/assets/edc477de-5c83-46bb-9858-f207e746913b)
+
 
 The objective of the game is to catch the fish, but using the net. The net falls down due to gravity, and the user has to press `w` to pull the net up and maintain the overlap between fish and the net. 
 
@@ -36,9 +37,9 @@ Go `w` for the win!
 - [ ] Speed levels 
 - [ ] Level with fish intelligence (move away from the net) 
 - [ ] Level with moving left and right 
-- [ ] Add rocks and design 
+- [x] Add rocks and design 
 - [ ] Add person with rod fishing on the right 
-- [ ] Move the line/thread as net moves (probably) 
+- [ ] Move the line/thread as net moves (*probably*) 
 - [ ] Fish designs randomly selected or with levels maybe 
 - [ ] Level maps, make it turbulent etc with colors 
 - [ ] Add other fish as background 
