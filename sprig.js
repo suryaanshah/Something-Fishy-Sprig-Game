@@ -571,7 +571,6 @@ onInput("a", () => {
     }
     
     getFirst(net).x -= 1; 
-    resetSpeed = true;
     computeScore();
   }
   else {
@@ -589,7 +588,6 @@ onInput("d", () => {
     }
     
     getFirst(net).x += 1; 
-    resetSpeed = true;
     computeScore();
   }
   else {
