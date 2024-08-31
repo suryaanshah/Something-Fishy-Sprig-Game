@@ -5,6 +5,10 @@
 @addedOn: 2024-08-25
 */
 
+const one = "1";
+const two = "2";
+const three = "3";
+
 const net = "n";
 const wall = "w";
 const fish = "r";
