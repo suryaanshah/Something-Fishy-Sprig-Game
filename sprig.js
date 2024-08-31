@@ -563,23 +563,39 @@ onInput("l", () => {
 });
 
 
-// a for levels
+// a for levels and moving with horizontal play
 onInput("a", () => {
   if (gameOngoing) {
-    return;
+    if (!horizontal_play) {
+      return;
+    }
+    
+    getFirst(net).x -= 1; 
+    resetSpeed = true;
+    computeScore();
   }
+  else {
     if (getFirst(selector).x > xSpeed1) {
       getFirst(selector).x -= 2; 
     }
+  }
 });
 
 // d for levels
 onInput("d", () => {
   if (gameOngoing) {
-    return;
+    if (!horizontal_play) {
+      return;
+    }
+    
+    getFirst(net).x += 1; 
+    resetSpeed = true;
+    computeScore();
   }
-  if (getFirst(selector).x < (xSpeed1 + 4 )) {
-    getFirst(selector).x += 2; 
+  else {
+    if (getFirst(selector).x < (xSpeed1 + 4 )) {
+      getFirst(selector).x += 2; 
+    }
   }
 });
 
@@ -612,6 +628,7 @@ onInput("w", () => {
   resetSpeed = true;
   computeScore();
 });
+
 
 // j for reset
 onInput("j", () => {
