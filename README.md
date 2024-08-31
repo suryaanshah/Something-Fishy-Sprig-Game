@@ -40,7 +40,7 @@ Go `w` for the win!
 - [x] Add rocks and design 
 - [ ] Add person with rod fishing on the right 
 - [ ] Move the line/thread as net moves (*probably*) 
-- [ ] Fish designs randomly selected or with levels maybe 
+- [x] Fish designs with levels 
 - [ ] Level maps, make it turbulent etc with colors 
 - [ ] Add other fish as background 
 
