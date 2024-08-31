@@ -4,7 +4,7 @@ A game to be played using [*Sprig*](https://sprig.hackclub.com) from HackClub.
 Play this game to practice your fishing skills! :laughing:
 
 # Description
-** Something Fishy ** is a fishing game. You win by catching the fish in the net. 
+** *Something Fishy* ** is a fishing game. You win by catching the fish in the net. 
 
 ![image](https://github.com/user-attachments/assets/edc477de-5c83-46bb-9858-f207e746913b)
 
