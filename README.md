@@ -4,12 +4,13 @@ A game to be played using [*Sprig*](https://sprig.hackclub.com) from HackClub.
 Play this game to practice your fishing skills! :laughing:
 
 # Description
-** *Something Fishy* ** is a fishing game. You win by catching the fish in the net. 
+*Something Fishy* is a fishing game. You win by catching the fish in the net. 
 
-![image](https://github.com/user-attachments/assets/edc477de-5c83-46bb-9858-f207e746913b)
-
+![image](https://github.com/user-attachments/assets/17927b49-bb2e-4191-a5d1-a975c02ee232)
 
 The objective of the game is to catch the fish by using the net. The net falls down due to gravity, and the user has to strategically press `w` to pull the net up and maintain the overlap between fish and the net. That is, the fish must be *inside* the net.
+
+Controls can be switched from only :arrow_up_down: to *also* include :left_right_arrow: by pressing `i`.  In that case, the fish can also move horizontally. 
 
 Your score and chances of catching increases as the overlap of the net and the fish is maintained, and starts decreasing if the overlap is no longer there. 
 
