@@ -36,7 +36,7 @@ Go `w` for the win!
 
 - [x] Speed levels 
 - [ ] Level with fish intelligence (move away from the net) 
-- [ ] Level with moving left and right 
+- [x] Level with moving left and right 
 - [x] Add rocks and design 
 - [ ] Add person with rod fishing on the right 
 - [ ] Move the line/thread as net moves (*probably*) 
