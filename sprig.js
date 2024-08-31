@@ -678,6 +678,16 @@ FFF20CCCCCC02FFF
   
 )
 
+// Sounds
+const net_sound = tune`
+500: C4~500,
+15500`;
+const back_tune = tune`
+500: F4~500,
+15500`;
+
+
+
 // Setup
 setSolids([fish1, fish2, fish3, fish1_flip, fish2_flip, fish3_flip, rock, seabed ]);
 
@@ -991,6 +1001,7 @@ function computeScore() {
   let f = getFirst(fish) || getFirst(fish_flip);
   if ((getFirst(net).y == f.y) && (getFirst(net).x == f.x)) {
     score += 10;
+    playTune(net_sound);
   }
   else {
     score -= 1;
