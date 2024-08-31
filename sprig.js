@@ -30,7 +30,7 @@ const winner_bg = "i";
 
 
 setLegend(
-  [ "1", bitmap`
+  [ one, bitmap`
 ................
 ................
 ........00000...
@@ -47,7 +47,7 @@ setLegend(
 .........0000...
 ................
 ................` ],
-  [ "2", bitmap`
+  [ two, bitmap`
 ................
 ................
 ......0000000...
@@ -64,7 +64,7 @@ setLegend(
 ......0000000...
 ................
 ................` ],
-  [ "3", bitmap`
+  [ three, bitmap`
 ................
 ................
 ......0000000...
@@ -81,7 +81,7 @@ setLegend(
 ......0000000...
 ................
 ................` ],
-  ["a", bitmap`
+  [ selector, bitmap`
 ........000.....
 .......00200....
 ......0022200...
@@ -389,6 +389,12 @@ fish_types = [
   fish3
 ];
 
+speed_sprites = [
+  one,
+  two,
+  three
+];
+
 // The fish should move faster than the net, so gravity Interval should be bigger.
 fishDelayTime = 1000;
 gravityIntervalTime = 700;
@@ -413,6 +419,16 @@ const winMap =  map`
 function computeSpeed(xSpeed1, xSelectedSpeed) {
   return Math.floor((xSelectedSpeed - xSpeed1) / 2);
 }
+
+function showSpeed(speed) {
+  addText("Level: ", {
+    x: 1,
+    y: 1,
+    color: color`2`
+  })
+  addSprite(5,0,speed_sprites[speed]);
+}
+
 
 function startText() {
 
@@ -501,6 +517,7 @@ onInput("s", () => {
     gameOngoing = true;
     gameLoop();
     clearText();
+    showSpeed(speed);
     scoreText();
   }
   
