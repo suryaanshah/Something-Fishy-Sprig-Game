@@ -641,9 +641,17 @@ function computeSpeed(xSpeed1, xSelectedSpeed) {
 }
 
 function showSpeed(speed) {
-  addSprite(0,0,speed_sprites[speed]);
+  addSprite(1,0,speed_sprites[speed]);
 }
 
+function showControls(horizontal_play) {
+  if (horizontal_play) {
+    addSprite(0,0,motion_all);
+  }
+  else {
+    addSprite(0,0,motion_ud);
+  }
+}
 
 function startText() {
 
@@ -786,6 +794,7 @@ onInput("s", () => {
     fish_y = fish_start_position[1];
     addSprite(fish_x, fish_y, fish);
     showSpeed(speed);
+    showControls(horizontal_play);
     gameOngoing = true;
     gameLoop();
     clearText();
