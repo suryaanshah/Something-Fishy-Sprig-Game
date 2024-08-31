@@ -498,7 +498,7 @@ onInput("w", () => {
 // j for reset
 onInput("j", () => {
   gameOngoing = false;
-  setMap(map_levels[level]);
+  setMap(setup_map);
   setBackground(water);
   score = 0;
   clearText();
