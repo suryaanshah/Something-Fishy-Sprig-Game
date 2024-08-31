@@ -41,6 +41,9 @@ const rock = "o";
 
 const winner_bg = "i";
 
+const fisherman_head = "*";
+const fisherman_body = "|";
+
 
 setLegend(
   [ one, bitmap`
@@ -528,6 +531,43 @@ DDDDDDDDDDDDDDDD`],
 ...........6666.
 ................
 ................`],
+
+
+  [fisherman_head, bitmap`
+.....00000......
+....0000CC0.....
+...00CCCC0C0....
+..00CC0000000...
+..00C0CCCC0C0...
+0000C0000CCCC00.
+0000066660000C0.
+.00606666606000.
+..F6LLL6LLL6F...
+..F6L02602L6F...
+..F622262226F...
+..FF6666666FF...
+...F6366366F....
+...F6633666F....
+....FF666FF.....
+......FFF.......`],
+  [fisherman_body, bitmap`
+...55FFFFFF55...
+..556666666655..
+.55F66666666F55.
+5555F666666F5555
+05555F6666F55550
+55550LLLLLL05555
+0550LLLLLLLL0550
+5550LLLLLLLL0555
+0550LLLLLLLL0550
+5550LLLLLLLL0555
+00000LLLLLL00000
+CFFC0LLLLLL0CFFC
+CFFC0LLLLLL0CFFC
+CFCC0LLLLLL0CCFC
+CCC.0LLLLLL0.CCC
+.....000000.....`]
+  
 )
 
 // Setup
