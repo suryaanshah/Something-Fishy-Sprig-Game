@@ -20,6 +20,7 @@ const fish2_flip = "5";
 const fish3 = "h";
 const fish3_flip = "6";
 const water = "w";
+const water_turbulent = "q";
 const fish_background = "f";
 const seabed = "b";
 
@@ -163,6 +164,23 @@ setLegend(
 7777775757777777
 7777757575777777
 7777777777777777`],  
+  [ water_turbulent, bitmap`
+7777777777777777
+7777777777777777
+7070707770707077
+7707077707070777
+7777777777777777
+7777777777777777
+7777070707777777
+7777707070777777
+7777777777777777
+7777777777777777
+7707070777070777
+7070707770707077
+7777777777777777
+7777770707777777
+7777707070777777
+7777777777777777`],
   [ seabed, bitmap`
 D...............
 DD..............
@@ -547,7 +565,7 @@ const netTerminalSpeed = 2.0;
 
 const fish_start_position = [9,3];
 
-let level = 0;
+
 const map_levels = [
   map`
 ...................
@@ -557,15 +575,16 @@ const map_levels = [
 ...................
 ...................
 ...................
-.........n.........
-...................
-bo.................
-bbo................
-bo.................
-bbo.............b..
-oobo........boobb..
-bbobbbb.b.bbobbbbbo`,
+q........n.........
+qq.................
+boq................
+bboq...............
+bo.qq..............
+bboqqqqq....qqqqbqq
+ooboqqqqqqqqboobbqq
+bbobbbbqbqbbobbbbbo`,
 ]
+let level = getRandomInt(0,map_levels.length);
 
 let speed = 0;
 fish_speeds = [
@@ -758,6 +777,7 @@ onInput("s", () => {
     // The fish should move faster than the net, so gravity Interval should be bigger.
     speed = computeSpeed(xSpeed1, getFirst(selector).x);
     fishIntervalTime = fish_speeds[speed];
+    level = getRandomInt(0,map_levels.length);
     setMap(map_levels[level]);
     setBackground(water);
     fish = fish_types[speed];
