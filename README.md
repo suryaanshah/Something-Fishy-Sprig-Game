@@ -31,6 +31,18 @@ Go `w` for the win!
 ![image](https://github.com/user-attachments/assets/84d2a4c9-2032-49ae-a7ed-b31fefaa6fae)
 
 
+## Todo List
+
+- [ ] Speed levels 
+- [ ] Level with fish intelligence (move away from the net) 
+- [ ] Level with moving left and right 
+- [ ] Add rocks and design 
+- [ ] Add person with rod fishing on the right 
+- [ ] Move the line/thread as net moves (probably) 
+- [ ] Fish designs randomly selected or with levels maybe 
+- [ ] Level maps, make it turbulent etc with colors 
+- [ ] Add other fish as background 
+
 ## License
 This game is licensed as BSD-3. 
 
