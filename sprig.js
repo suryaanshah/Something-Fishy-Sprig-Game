@@ -9,6 +9,8 @@ const one = "1";
 const two = "2";
 const three = "3";
 
+const selector = "a";
+
 const net = "n";
 const wall = "w";
 const fish = "r";
@@ -21,6 +23,7 @@ const sparkle_tr = "z";
 const sparkle_bl = "x";
 const sparkle_br = "c";
 const rock = "o";
+
 
 
 const winner_bg = "i";
@@ -309,6 +312,10 @@ bo.................
 bbo.............b..
 oobo........boobb..
 bbobbbb.b.bbobbbbbo`;
+setMap(setup_map);
+setBackground(water);
+
+
 
 let score = 0;
 
@@ -367,9 +374,6 @@ const winMap =  map`
 ..................
 ..................`;
 
-setMap(map_levels[level]);
-setBackground(water);
-
 
 function startText() {
   addText("Press s to start!", {
@@ -416,10 +420,29 @@ function gameLoop() {
   gravityNet();
 }
 
+
+// a for levels
+onInput("a", () => {
+  if (gameOngoing) {
+    return;
+  }
+  getFirst(selector).x -= 1; 
+});
+
+// d for levels
+onInput("d", () => {
+  if (gameOngoing) {
+    return;
+  }
+  getFirst(selector).x += 1; 
+});
+
 // s for start
 onInput("s", () => {
   // This check is necessary to prevent fish erratic behavior.
   if ((!gameOngoing) & (score == 0)) {
+    setMap(map_levels[level]);
+    setBackground(water);
     gameOngoing = true;
     gameLoop();
     clearText();
