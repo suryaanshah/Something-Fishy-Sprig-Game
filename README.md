@@ -39,8 +39,7 @@ Go `w` for the win!
 - [ ] Level with fish intelligence (move away from the net) 
 - [x] Level with moving left and right 
 - [x] Add rocks and design 
-- [ ] Add person with rod fishing on the right 
-- [ ] Move the line/thread as net moves (*probably*) 
+- [x] Add person with rod fishing on the right 
 - [x] Fish designs with levels 
 - [x] Level maps, make it turbulent etc with colors 
 - [ ] Add music and sounds
