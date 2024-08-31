@@ -1,5 +1,4 @@
 /*
-
 @title: Something Fishy
 @author: Suryaansh Chawla
 @tags: [fishing, fish]
@@ -219,11 +218,6 @@ DDDDDDDDDDDDDDDD`],
 ................`],
 )
 
-// The fish should move faster than the net, so gravity Interval should be bigger.
-fishIntervalTime = 300;
-fishDelayTime = 1000;
-gravityIntervalTime = 700;
-
 let score = 0;
 
 let moveInterval = undefined;
@@ -232,8 +226,8 @@ let resetSpeed = false;
 const netAcceleration = 0.4;
 const netTerminalSpeed = 2.0;
 
-let level = 0
-const levels = [
+let level = 0;
+const map_levels = [
   map`
 ...................
 ...................
@@ -252,6 +246,18 @@ oobo........boobb..
 bbobbbb.b.bbobbbbbo`,
 ]
 
+speed = 1;
+fish_speeds = [
+  500,
+  200,
+  25
+];
+
+// The fish should move faster than the net, so gravity Interval should be bigger.
+fishIntervalTime = fish_speeds[speed];
+fishDelayTime = 1000;
+gravityIntervalTime = 700;
+
 const winMap =  map`
 ..................
 ..................
@@ -269,7 +275,7 @@ const winMap =  map`
 ..................
 ..................`;
 
-setMap(levels[level]);
+setMap(map_levels[level]);
 setBackground(water);
 
 
@@ -343,7 +349,7 @@ onInput("w", () => {
 // j for reset
 onInput("j", () => {
   gameOngoing = false;
-  setMap(levels[level]);
+  setMap(map_levels[level]);
   setBackground(water);
   score = 0;
   clearText();
