@@ -14,6 +14,7 @@ const selector = "a";
 const net = "n";
 const wall = "w";
 const fish = "r";
+const fish2 = "y";
 const water = "w";
 const seabed = "b";
 
@@ -173,6 +174,23 @@ setLegend(
 ................
 ................
 ................`],
+  [fish2, bitmap`
+................
+................
+................
+...0000.........
+..0044400000....
+....000DDD070...
+....044DD07770..
+0..04DDDD077070.
+D00DDDDDD077070.
+0D0DDDDDDD07770.
+D0DDDDDDDDD00000
+D0DDDDDDDD0CCCC0
+0D0D0440D0C0000.
+D0.0040DDD0CCC0.
+00..00DDDDD000..
+......00000.....`],
   [ water, bitmap`
 7777777777777777
 7777777777777777
