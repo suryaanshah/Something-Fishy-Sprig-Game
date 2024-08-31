@@ -473,6 +473,7 @@ onInput("s", () => {
   // This check is necessary to prevent fish erratic behavior.
   if ((!gameOngoing) & (score == 0)) {
     // The fish should move faster than the net, so gravity Interval should be bigger.
+    speed = computeSpeed(xSpeed1, getFirst(selector).x);
     fishIntervalTime = fish_speeds[speed];
     setMap(map_levels[level]);
     setBackground(water);
