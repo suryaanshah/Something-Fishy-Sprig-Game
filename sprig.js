@@ -410,7 +410,7 @@ const setup_map = map`
 ..........a........
 ...................
 ...................
-..........n........
+...................
 ...................
 bo.................
 bbo................
@@ -453,7 +453,7 @@ oobo........boobb..
 bbobbbb.b.bbobbbbbo`,
 ]
 
-speed = 0;
+let speed = 0;
 fish_speeds = [
   500,
   200,
@@ -465,6 +465,16 @@ fish_types = [
   fish2,
   fish3
 ];
+
+let fish = fish_types[speed];
+
+fish_flip_types = [
+  fish1_flip,
+  fish2_flip,
+  fish3_flip
+];
+
+let fish_flip = fish_flip_types[speed];
 
 speed_sprites = [
   one,
@@ -607,6 +617,7 @@ onInput("s", () => {
     setMap(map_levels[level]);
     setBackground(water);
     fish = fish_types[speed];
+    fish_flip = fish_flip_types[speed];
     addSprite(9,3,fish);
     showSpeed(speed);
     gameOngoing = true;
@@ -698,16 +709,20 @@ function moveFish() {
   let startX = getFirst(fish).x;
   let directionMoves = getRandomSign();
   if (startY == 0) {
-    directionMoves = 1; }
+    directionMoves = 1; 
+  }
   else if (startY == (height()-1)) {
-    directionMoves = -1; }
+    directionMoves = -1; 
+  }
 
   // Limit horizontal motion
   if (horizontal_play) {
     if (startX == Math.floor(width()/2 - 5)) {
-      horizontalDirection = 1; } 
+      horizontalDirection = 1; 
+    } 
     else if (startX == Math.floor(width()/2 + 2)) {
-      horizontalDirection = -1; }
+      horizontalDirection = -1; 
+    }
   }
   
   moveCount = 0;
