@@ -731,18 +731,17 @@ const map_levels = [
 ...................
 ...................
 ...................
-...................
-.................mm
-...............mmmm
-q........n....mmmmm
-qq...........mmmmmm
-boq..........mmmmmm
-bboq.........pm*mmp
-bo.qq........pm|mmp
-bboqqqqq....qqp,mpp
-ooboqqqqqqqqboopppv
-bbobbbbqbqbbobvppvv`,
-]
+.................qq
+q..............qqmm
+q.............qmmmm
+qq.......n..qqmmmmm
+qqq.........qmmmmmm
+boqq........qmmmmmm
+bboq........qpm*mmp
+bob.........qpm|mmp
+bbob........qqp,mpp
+oobob.......boopppv
+bbobbbb.b.bbobvppvv`,
 let level = getRandomInt(0,map_levels.length);
 
 let speed = 0;
