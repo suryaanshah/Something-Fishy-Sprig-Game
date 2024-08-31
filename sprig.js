@@ -644,6 +644,7 @@ onInput("j", () => {
   gameOngoing = false;
   setMap(setup_map);
   setBackground(water);
+  horizontal_play = false;
   score = 0;
   clearText();
   startText();
@@ -663,7 +664,8 @@ function computeScore() {
   if (!gameOngoing) {
     return;
   }
-  if ((getFirst(net).y == getFirst(fish).y) && (getFirst(net).x == getFirst(fish).x)) {
+  let f = getFirst(fish) || getFirst(fish_flip);
+  if ((getFirst(net).y == f.y) && (getFirst(net).x == f.x)) {
     score += 10;
   }
   else {
@@ -676,6 +678,20 @@ function computeScore() {
     win();
   }
   
+}
+
+function updateFish() {
+  let f = getFirst(fish);
+  if (f) {
+    addSprite(f.x, f.y, fish_flip)
+    f.remove()
+  } 
+  else 
+  {
+    f = getFirst(fish_flip);
+    addSprite(f.x, f.y, fish)
+    f.remove()
+  }
 }
 
 function getRandomInt(min, max) {
@@ -704,9 +720,11 @@ function moveFish() {
   }
   
   let numMoves = getRandomInt(1, 5);
-  
-  let startY = getFirst(fish).y;
-  let startX = getFirst(fish).x;
+
+
+  let f = getFirst(fish) || getFirst(fish_flip);
+  let startY = f.y;
+  let startX = f.x;
   let directionMoves = getRandomSign();
   if (startY == 0) {
     directionMoves = 1; 
@@ -728,12 +746,13 @@ function moveFish() {
   moveCount = 0;
   moveInterval = setInterval(() => {
     if (gameOngoing) {
-      getFirst(fish).y += directionMoves; // move the fish
+      f.y += directionMoves; // move the fish
       moveCount++; // increment number of times the fish has moved
 
       if (horizontal_play) { 
         if (moveHorizontally && moveCount === 1) {
-          getFirst(fish).x += horizontalDirection; // Move the fish horizontally once
+          f.x += horizontalDirection; // Move the fish horizontally once
+          updateFish();
         }
       }
     }
