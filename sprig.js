@@ -333,8 +333,7 @@ bbobbbb.b.bbobbbbbo`;
 setMap(setup_map);
 setBackground(water);
 
-const xLevel1 = getFirst(selector).x;
-
+const xSpeed1 = getFirst(selector).x;
 
 let score = 0;
 
@@ -364,7 +363,7 @@ oobo........boobb..
 bbobbbb.b.bbobbbbbo`,
 ]
 
-speed = 1;
+speed = 0;
 fish_speeds = [
   500,
   200,
@@ -392,6 +391,9 @@ const winMap =  map`
 ..................
 ..................`;
 
+function computeSpeed(xSpeed1, xSelectedSpeed) {
+  return Math.floor((xSelectedSpeed - xSpeed1) / 2);
+}
 
 function startText() {
 
@@ -451,7 +453,7 @@ onInput("a", () => {
   if (gameOngoing) {
     return;
   }
-    if (getFirst(selector).x > xLevel1) {
+    if (getFirst(selector).x > xSpeed1) {
       getFirst(selector).x -= 2; 
     }
 });
@@ -461,7 +463,7 @@ onInput("d", () => {
   if (gameOngoing) {
     return;
   }
-  if (getFirst(selector).x < (xLevel1 + 4 )) {
+  if (getFirst(selector).x < (xSpeed1 + 4 )) {
     getFirst(selector).x += 2; 
   }
 });
