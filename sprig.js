@@ -313,15 +313,16 @@ DDDDDDDDDDDDDDDD`],
 )
 
 
+// Setup
 const setup_map = map`
 ...................
 ...................
 ...................
+..........r........
+..........a........
 ...................
-..........a.a.a....
 ...................
-...................
-...................
+..........n........
 ...................
 bo.................
 bbo................
@@ -332,6 +333,7 @@ bbobbbb.b.bbobbbbbo`;
 setMap(setup_map);
 setBackground(water);
 
+const xLevel1 = getFirst(selector).x;
 
 
 let score = 0;
@@ -370,7 +372,6 @@ fish_speeds = [
 ];
 
 // The fish should move faster than the net, so gravity Interval should be bigger.
-fishIntervalTime = fish_speeds[speed];
 fishDelayTime = 1000;
 gravityIntervalTime = 700;
 
@@ -450,7 +451,9 @@ onInput("a", () => {
   if (gameOngoing) {
     return;
   }
-  getFirst(selector).x -= 1; 
+    if (getFirst(selector).x > xLevel1) {
+      getFirst(selector).x -= 2; 
+    }
 });
 
 // d for levels
@@ -458,13 +461,17 @@ onInput("d", () => {
   if (gameOngoing) {
     return;
   }
-  getFirst(selector).x += 1; 
+  if (getFirst(selector).x < (xLevel1 + 4 )) {
+    getFirst(selector).x += 2; 
+  }
 });
 
 // s for start
 onInput("s", () => {
   // This check is necessary to prevent fish erratic behavior.
   if ((!gameOngoing) & (score == 0)) {
+    // The fish should move faster than the net, so gravity Interval should be bigger.
+    fishIntervalTime = fish_speeds[speed];
     setMap(map_levels[level]);
     setBackground(water);
     gameOngoing = true;
