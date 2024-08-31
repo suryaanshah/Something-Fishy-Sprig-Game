@@ -42,7 +42,6 @@ Go `w` for the win!
 - [ ] Move the line/thread as net moves (*probably*) 
 - [x] Fish designs with levels 
 - [ ] Level maps, make it turbulent etc with colors 
-- [ ] Add other fish as background
 - [ ] Add music and sounds
 
 ## License
