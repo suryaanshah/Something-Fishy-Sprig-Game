@@ -42,7 +42,7 @@ Go `w` for the win!
 - [ ] Add person with rod fishing on the right 
 - [ ] Move the line/thread as net moves (*probably*) 
 - [x] Fish designs with levels 
-- [ ] Level maps, make it turbulent etc with colors 
+- [x] Level maps, make it turbulent etc with colors 
 - [ ] Add music and sounds
 
 ## License
