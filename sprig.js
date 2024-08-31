@@ -399,6 +399,7 @@ DDDDDDDDDDDDDDDD`],
 ................`],
 )
 
+setSolids([ rock, seabed ]);
 
 // Setup
 const setup_map = map`
@@ -686,10 +687,11 @@ function moveFish() {
   else if (startY == (height()-1)) {
     directionMoves = -1; }
 
+  // Limit horizontal motion
   if (horizontal_play) {
-    if (startX == 0) {
+    if (startX == Math.floor(width()/2 - 2)) {
       horizontalDirection = 1; } 
-    else if (startX === (width() - 1)) {
+    else if (startX == Math.floor(width()/2 + 2)) {
       horizontalDirection = -1; }
   }
   
