@@ -622,8 +622,8 @@ CCC0CCCCCCCC0CCC
 F66F0CCCCCC0F66F
 F66F0CCCCCC0F66F
 F6FF0CCCCCC0FF6F
-FFF20CCCCCC02FFF
-2222200000022222`],
+FFF20CCCCCC00FFF
+2222200000000022`],
   [fisherman_legs, bitmap`
 222220C0C0CC0222
 2222201101110222
@@ -680,12 +680,42 @@ FFF20CCCCCC02FFF
 
 // Sounds
 const net_sound = tune`
-500: C4~500,
+500: C4-500,
 15500`;
 const back_tune = tune`
-500: F4~500,
-15500`;
-
+500: E4~500 + E5^500,
+500: E4~500 + E5^500,
+500: F4~500 + F5^500,
+500: G4~500 + G5^500,
+500: G4~500 + G5^500,
+500: F4~500 + F5^500,
+500: E4~500 + E5^500,
+500: D4~500 + D5^500,
+500: C4~500 + C5^500,
+500: C4~500 + C5^500,
+500: D4~500 + D5^500,
+500: E4~500 + E5^500,
+500: E4~500 + E5^500,
+500: D4~500 + D5^500,
+500: D4~500 + D5^500,
+500,
+500: E4~500 + E5^500,
+500: E4~500 + E5^500,
+500: F4~500 + F5^500,
+500: G4~500 + G5^500,
+500: G4~500 + G5^500,
+500: F4~500 + F5^500,
+500: E4~500 + E5^500,
+500: D4~500 + D5^500,
+500: C4~500 + C5^500,
+500: C4~500 + C5^500,
+500: D4~500 + D5^500,
+500: E4~500 + E5^500,
+500: E4~500 + E5^500,
+500: D4~500 + D5^500,
+500: D4~500 + D5^500,
+500`;
+let playback = undefined;
 
 
 // Setup
@@ -742,6 +772,7 @@ bob.........qpm|mmp
 bbob........qqp,mpp
 oobob.......boopppv
 bbobbbb.b.bbobvppvv`,
+]
 let level = getRandomInt(0,map_levels.length);
 
 let speed = 0;
@@ -974,6 +1005,9 @@ onInput("w", () => {
 
 // j for reset
 onInput("j", () => {
+  if (playback) {
+    playback.end();
+  }
   gameOngoing = false;
   setMap(setup_map);
   setBackground(water);
@@ -1010,6 +1044,7 @@ function computeScore() {
 
   if (score >= 100) {
     win();
+    playback = playTune(back_tune, Infinity);
   }
   
 }
