@@ -44,7 +44,7 @@ Go `w` for the win!
 - [x] Add person with rod fishing on the right 
 - [x] Fish designs with levels 
 - [x] Level maps, make it turbulent etc with colors 
-- [ ] Add music and sounds
+- [x] Add music and sounds
 
 ## License
 This game is licensed as BSD-3. 
