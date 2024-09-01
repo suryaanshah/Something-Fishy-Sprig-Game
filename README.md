@@ -6,7 +6,7 @@ Play this game to practice your fishing skills! :laughing:
 # Description
 *Something Fishy* is a fishing game. You win by catching the fish in the net. 
 
-![image](https://github.com/user-attachments/assets/17927b49-bb2e-4191-a5d1-a975c02ee232)
+![image](https://github.com/user-attachments/assets/9d135549-a742-4c18-8eb3-e8a118075cdd)
 
 The objective of the game is to catch the fish by using the net. The net falls down due to gravity, and the user has to strategically press `w` to pull the net up and maintain the overlap between fish and the net. That is, the fish must be *inside* the net.
 
@@ -19,7 +19,7 @@ The fish is caught when the score reaches 100!
 ## How to play
 The game can be played by installing it on Sprig. 
 
-![image](https://github.com/user-attachments/assets/0e692747-103d-4369-911c-75bff496fb49)
+![gamplay](https://github.com/user-attachments/assets/9da1a354-bdb8-4fae-a521-9d43ddd4f558)
 
 Alternatively, you can play the game [*here*](https://sprig.hackclub.com/share/tzt4M1tjT0kMtsc39kjZ) at Sprig's website. Press, `Shift + Enter`, and press `s` to start. 
 
