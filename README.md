@@ -1,9 +1,10 @@
 # Something-Fishy-Sprig-Game
 A game to be played using [*Sprig*](https://sprig.hackclub.com) from HackClub. 
 <br>
+
 Play this game to practice your fishing skills! :laughing:
 
-# Description
+## Description
 *Something Fishy* is a fishing game. You win by catching the fish in the net. 
 
 ![image](https://github.com/user-attachments/assets/9d135549-a742-4c18-8eb3-e8a118075cdd)
@@ -22,6 +23,8 @@ The game can be played by installing it on Sprig.
 ![gamplay](https://github.com/user-attachments/assets/9da1a354-bdb8-4fae-a521-9d43ddd4f558)
 
 Alternatively, you can play the game [*here*](https://sprig.hackclub.com/share/tzt4M1tjT0kMtsc39kjZ) at Sprig's website. Press, `Shift + Enter`, and press `s` to start. 
+
+![image](https://github.com/user-attachments/assets/8c4a62b5-0d5b-4215-875e-20e58f700cb8)
 
 Go `w` for the win!
 
