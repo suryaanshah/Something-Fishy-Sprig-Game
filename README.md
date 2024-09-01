@@ -22,7 +22,7 @@ The game can be played by installing it on Sprig.
 
 ![gamplay](https://github.com/user-attachments/assets/9da1a354-bdb8-4fae-a521-9d43ddd4f558)
 
-Alternatively, you can play the game [*here*](https://sprig.hackclub.com/share/tzt4M1tjT0kMtsc39kjZ) at Sprig's website. Press, `Shift + Enter`, and press `s` to start. 
+Alternatively, you can play the game [*here*](https://sprig.hackclub.com/share/Lu2mRZxMfGeqyhCmWaoN) at Sprig's website. Press, `Shift + Enter`, and press `s` to start. 
 
 ![image](https://github.com/user-attachments/assets/8c4a62b5-0d5b-4215-875e-20e58f700cb8)
 
