@@ -18,15 +18,14 @@ Your score and chances of catching increases as the overlap of the net and the f
 The fish is caught when the score reaches 100!
 
 ## How to play
-The game can be played by installing it on Sprig. 
+The game can be played by installing it on Sprig. Alternatively, you can play the game [*here*](https://sprig.hackclub.com/share/Lu2mRZxMfGeqyhCmWaoN) at Sprig's website. Press, `Shift + Enter`, and press `s` to start.  Go `w` for the win!
+
 
 ![gamplay](https://github.com/user-attachments/assets/9da1a354-bdb8-4fae-a521-9d43ddd4f558)
 
-Alternatively, you can play the game [*here*](https://sprig.hackclub.com/share/Lu2mRZxMfGeqyhCmWaoN) at Sprig's website. Press, `Shift + Enter`, and press `s` to start. 
 
 ![image](https://github.com/user-attachments/assets/8c4a62b5-0d5b-4215-875e-20e58f700cb8)
 
-Go `w` for the win!
 
 ### Happy Fishing =)
 :fish: :tropical_fish: :blowfish:
@@ -37,17 +36,6 @@ Go `w` for the win!
 **Something Fishy** :fish: is a game inspired by Fishing game in Megamon, a Pokemon game. 
 
 ![image](https://github.com/user-attachments/assets/84d2a4c9-2032-49ae-a7ed-b31fefaa6fae)
-
-## Todo List
-
-- [x] Speed levels 
-- [ ] Level with fish intelligence (move away from the net) 
-- [x] Level with moving left and right 
-- [x] Add rocks and design 
-- [x] Add person with rod fishing on the right 
-- [x] Fish designs with levels 
-- [x] Level maps, make it turbulent etc with colors 
-- [x] Add music and sounds
 
 ## License
 This game is licensed as BSD-3. 
