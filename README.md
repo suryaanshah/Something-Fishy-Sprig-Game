@@ -28,7 +28,7 @@ The following key-direction pair is followed in the game:
 
 You control the net, and try to overlap it with where the fish moves.
 
-*Note*: If you had selected :arrow_up_down: , then only `w` key will work. Accordingly the fish will also only move unidirectiionally.
+*Note*: If you had selected :arrow_up_down: , then only `w` key will work. Accordingly the fish will also only move unidirectionally.
 
 
 
