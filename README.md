@@ -18,7 +18,7 @@ Your score and chances of catching increases as the overlap of the net and the f
 The fish is caught when the score reaches 100!
 
 ## How to play
-The game can be played by installing it on Sprig. Alternatively, you can play the game [*here*](https://sprig.hackclub.com/share/Lu2mRZxMfGeqyhCmWaoN) at Sprig's website. Press, `Shift + Enter`, and press `s` to start.
+The game can be played by installing it on Sprig. Alternatively, you can play the game [*here*](https://sprig.hackclub.com/share/E1hniPX3i6gKj0ojIUcX) at Sprig's website. Press, `Shift + Enter`, and press `s` to start.
 
 ### Controls
 The following key-direction pair is followed in the game:
