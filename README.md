@@ -18,7 +18,18 @@ Your score and chances of catching increases as the overlap of the net and the f
 The fish is caught when the score reaches 100!
 
 ## How to play
-The game can be played by installing it on Sprig. Alternatively, you can play the game [*here*](https://sprig.hackclub.com/share/Lu2mRZxMfGeqyhCmWaoN) at Sprig's website. Press, `Shift + Enter`, and press `s` to start.  Go `w` for the win!
+The game can be played by installing it on Sprig. Alternatively, you can play the game [*here*](https://sprig.hackclub.com/share/Lu2mRZxMfGeqyhCmWaoN) at Sprig's website. Press, `Shift + Enter`, and press `s` to start.
+
+### Controls
+The following key-direction pair is followed in the game:
++ `d` - denotes move-right
++ `a` - denotes move-left
++ `w` - denotes move-up
+
+You control the net, and try to overlap it with where the fish moves.
+
+*Note*: If you had selected :arrow_up_down: , then only `w` key will work. Accordingly the fish will also only move unidirectiionally.
+
 
 
 ![gamplay](https://github.com/user-attachments/assets/9da1a354-bdb8-4fae-a521-9d43ddd4f558)
